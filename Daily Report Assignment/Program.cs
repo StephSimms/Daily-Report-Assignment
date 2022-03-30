@@ -19,13 +19,26 @@
         Console.ReadLine();
 
         Console.WriteLine("Do you need help with anything? Please answer \"true\" or \"false\" ");
-        bool isHelp = false;
-        Console.WriteLine("OK, sounds like you've got it!" + isHelp);
-        Console.ReadLine();
-        bool isHelp = true;
-        Console.WriteLine("OK, help is on the way!" + isHelp);
-        Console.ReadLine();
-
+        string isHelp = Console.ReadLine().ToLower();
+        if (isHelp == "false" || isHelp == "true")
+        {
+            if (isHelp == "false")
+            {
+                Console.WriteLine("OK, sounds like you've got it!");
+                Console.ReadLine();
+            }
+            if (isHelp == "true")
+            {
+                Console.WriteLine("OK, help is on the way!");
+                Console.ReadLine();
+            }
+        }
+        else
+        {
+            Console.WriteLine("Please start over and submit true or false");
+            Console.ReadLine();
+        }
+        
         Console.WriteLine("Were there any positive experiences you'd like to share? Please give specifics.");
         string myFeedback = Console.ReadLine();
         Console.WriteLine("Thank you for the feedback." + myFeedback);
@@ -38,7 +51,7 @@
 
         Console.WriteLine("How many hours did you study today?");
         string hoursStudied = Console.ReadLine();
-        Console.WriteLine("You've studied" + hoursStudied);
+        Console.WriteLine("You've studied:  " + hoursStudied);
         Console.ReadLine();
 
         Console.WriteLine("Thank you for your answers. An instructor will respond shortly. Have a great day!");
